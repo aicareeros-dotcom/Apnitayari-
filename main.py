@@ -372,7 +372,7 @@ def auth_check_filter(_, client, message):
 
 auth_filter = filters.create(auth_check_filter)
 
-@bot.on_message(~auth_filter & filters.private & filters.command)
+@bot.on_message(~auth_filter & filters.private & filters.regex(r'^/'))
 async def unauthorized_handler(client, message: Message):
     await message.reply(
         "<b>Mʏ Nᴀᴍᴇ [ONeX 🦋](https://t.me/Exter_pd62)</b>\n\n"
